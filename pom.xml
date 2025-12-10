@@ -7,7 +7,16 @@
     <groupId>org.example</groupId>
     <artifactId>FinalComputerScience</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+         
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+         
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
