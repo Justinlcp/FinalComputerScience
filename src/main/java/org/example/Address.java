@@ -24,7 +24,7 @@ public class Address {
             this.street = street;
             this.city = city;
             this.province = province;
-            this.postalCode = postalCode;
+            this.postalCode = postalCode.toUpperCase();
         } else {
             this.streetNo = null;
             this.street = null;
