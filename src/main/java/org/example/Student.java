@@ -24,6 +24,14 @@ public class Student {
     MALE, FEMALE
     }
 
+    /**
+     * Registers a course, this method (1) adds the course to the student's registeredCourses list,
+     * (2) adds the student to the course's registeredStudents list,
+     * (3) appends a null for the scores of each assignment of the course.
+     * If the course is already registered, it directly returns false without adding anything.
+     * @param course the given course to be registered
+     * @return True or False to validate the student's desired course to register.
+     */
     public boolean registerCourse(Course course) {
 
         if (registeredCourses.contains(course)) {
@@ -40,6 +48,13 @@ public class Student {
         return true;
     }
 
+    /**
+     * Drops a course, removes the course from the student's registeredCourses list, and
+     * removes the student from the course's registeredStudents list. If the course is not
+     * registered yet, it directly returns false without removing anything.
+     * @param course the given course to drop
+     * @return True or False to validate if the course was registered or not.
+     */
     public boolean dropCourse(Course course) {
         if (!registeredCourses.contains(course)) {
             return false;
