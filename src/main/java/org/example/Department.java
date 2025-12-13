@@ -11,8 +11,7 @@ import lombok.EqualsAndHashCode;
 public class Department {
 
     private String departmentId;
-    @Setter
-    private String departmentName;
+    @Setter private String departmentName;
     private static int nextId = 1;
 
     public Department(String departmentName) {
