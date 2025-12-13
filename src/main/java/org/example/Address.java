@@ -8,7 +8,7 @@ import lombok.*;
 @EqualsAndHashCode
 public class Address {
 
-    private Integer StreetNo;
+    private Integer streetNo;
     private String street;
     private String city;
     private Province province;
