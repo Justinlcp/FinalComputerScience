@@ -15,6 +15,18 @@ public class Department {
     private String departmentName;
     private static int nextId = 1;
 
+    public Department(String departmentName) {
+        this.departmentName = departmentName;
+        this.departmentId = String.format("D%02d", nextId);
+        nextId++;
+
+        if (!isDepartmentNameValid(departmentName)) {
+            this.departmentId = null;
+            this.departmentName = null;
+            return;
+        }
+    }
+
     /**
      * checks if a department name is valid or not, a department
      * name should only contain letters or space
