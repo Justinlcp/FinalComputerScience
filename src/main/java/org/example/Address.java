@@ -8,7 +8,7 @@ import lombok.*;
 @EqualsAndHashCode
 public class Address {
 
-    private int StreetNo;
+    private Integer StreetNo;
     private String street;
     private String city;
     private Province province;
@@ -16,6 +16,22 @@ public class Address {
 
     public enum Province {
         AB, BC, MB, NB, NL, NS, NT, NU, ON, PE, QC, SK, YT
+    }
+
+    public Address(int streetNo, String street, String city, Province province, String postalCode) {
+        if (isPostalCodeValid(postalCode)) {
+            this.streetNo = streetNo;
+            this.street = street;
+            this.city = city;
+            this.province = province;
+            this.postalCode = postalCode;
+        } else {
+            this.streetNo = null;
+            this.street = null;
+            this.city = null;
+            this.province = null;
+            this.postalCode = null;
+        }
     }
 
     /**
