@@ -16,15 +16,15 @@ public class Department {
     private static int nextId = 1;
 
     public Department(String departmentName) {
-        this.departmentName = departmentName;
-        this.departmentId = String.format("D%02d", nextId);
-        nextId++;
-
         if (!isDepartmentNameValid(departmentName)) {
             this.departmentId = null;
             this.departmentName = null;
             return;
         }
+
+        this.departmentName = departmentName;
+        this.departmentId = String.format("D%02d", nextId);
+        nextId++;
     }
 
     /**
