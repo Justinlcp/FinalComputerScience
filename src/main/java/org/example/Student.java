@@ -23,4 +23,20 @@ public class Student {
     public enum Gender {
     MALE, FEMALE
     }
+
+    public boolean registerCourse(Course course) {
+
+        if (registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.add(course);
+        course.getRegisteredStudents().add(this);
+
+        for (Assignment a : course.getAssignments()) {
+            a.getScores().add(null);
+        }
+
+        return true;
+    }
 }
