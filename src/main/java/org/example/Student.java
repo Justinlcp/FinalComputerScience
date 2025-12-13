@@ -39,4 +39,15 @@ public class Student {
 
         return true;
     }
+
+    public boolean dropCourse(Course course) {
+        if (!registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.remove(course);
+        course.getRegisteredStudents().remove(this);
+
+        return true;
+    }
 }
