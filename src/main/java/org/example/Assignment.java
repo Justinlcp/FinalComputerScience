@@ -39,4 +39,18 @@ public class Assignment {
             scores.set(i, score);
         }
     }
+
+    public double calcAssignmentAvg() {
+        if (scores.isEmpty()) return 0;
+
+        int sum = 0;
+        int amountOfGrades = 0;
+        for (Integer score : scores) {
+            if (score != null) {
+                sum += score;
+                amountOfGrades++;
+            }
+        }
+        return amountOfGrades == 0 ? 0 : (double) sum / amountOfGrades;
+    }
 }
