@@ -17,6 +17,14 @@ public class Assignment {
 
     private static int nextId = 1;
 
+
+    public Assignment(String assignmentName, double weight) {
+        this.assignmentId = String.format("A%02d", nextId++);
+        this.assignmentName = assignmentName;
+        this.weight = weight;
+        this.scores = new ArrayList<>();
+    }
+
     /**
      * Generates random scores for all students in an assignment, the scores are generated
      * with the following rule: Firstly generate a random number in range [0, 10], then
