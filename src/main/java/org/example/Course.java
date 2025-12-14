@@ -72,3 +72,9 @@ public class Course {
         assignments.add(newAssignment);
         return true;
     }
+
+    public void generateScores() {
+        for (Assignment a : assignments) {
+            a.generateRandomScore();
+        }
+    }
