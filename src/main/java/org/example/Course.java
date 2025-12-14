@@ -18,21 +18,10 @@ public class Course {
     private Department department;
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
-    private ArrayList<Integer>  finalScores;
 
     private static int nextId = 1;
 
     public Course(String courseName, double credits, Department department) {
-        if (courseName == null || department == null) {
-            this.courseId = null;
-            this.courseName = null;
-            this.credits = 0;
-            this.department = null;
-            this.assignments = null;
-            this.registeredStudents = null;
-            return;
-        }
-
         this.courseName = util.Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
