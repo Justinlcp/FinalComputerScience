@@ -102,23 +102,24 @@ public class Course {
      */
     public void generateScores() {
         for (Assignment a : assignments) {
-        a.generateRandomScore();
-    }
-
-    finalScores.clear();
-
-    for (int i = 0; i < registeredStudents.size(); i++) {
-        double total = 0;
-
-        for (Assignment a : assignments) {
-            Integer score = a.getScores().get(i);
-
-            if (score != null) {
-                total += score * (a.getWeight() / 100);
-            }
+            a.generateRandomScore();
         }
 
-        finalScores.add((int) Math.round(total));
+        finalScores.clear();
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            double total = 0;
+
+            for (Assignment a : assignments) {
+                Integer score = a.getScores().get(i);
+
+                if (score != null) {
+                    total += score * (a.getWeight() / 100);
+                }
+            }
+
+            finalScores.add((int) Math.round(total));
+        }
     }
 
     /**
@@ -126,6 +127,7 @@ public class Course {
      *  weighted average.
      */
     public void displayScores() {
+
         System.out.printf("Course: %s (%s)\n", courseName, courseId);
 
         System.out.printf("%-20s", "Student");
@@ -133,8 +135,6 @@ public class Course {
             System.out.printf("%-15s", a.getAssignmentName());
         }
         System.out.printf("%-10s\n", "Final Score");
-
-        int[] finalScores = calcStudentsAverage();
 
         for (int i = 0; i < registeredStudents.size(); i++) {
             Student student = registeredStudents.get(i);
@@ -144,12 +144,13 @@ public class Course {
                 Integer score = a.getScores().get(i);
                 System.out.printf("%-15s", score == null ? "-" : score);
             }
-            System.out.printf("%-10d\n", finalScores[i]);
-        }
-        System.out.printf("%-20s", "Average");
 
-        for (Assignment assignment : assignments) {
-            System.out.printf("%-15.0f", assignment.calcAssignmentAvg());
+            System.out.printf("%-10d\n", finalScores.get(i));
+        }
+
+        System.out.printf("%-20s", "Average");
+        for (Assignment a : assignments) {
+            System.out.printf("%-15.0f", a.calcAssignmentAvg());
         }
         System.out.println();
     }
