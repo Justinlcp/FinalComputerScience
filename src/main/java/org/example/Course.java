@@ -3,6 +3,7 @@ package org.example;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import util.Util;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class Course {
     private Department department;
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
+    private ArrayList<Integer>  finalScores;
 
     private static int nextId = 1;
 
@@ -100,8 +102,23 @@ public class Course {
      */
     public void generateScores() {
         for (Assignment a : assignments) {
-            a.generateRandomScore();
+        a.generateRandomScore();
+    }
+
+    finalScores.clear();
+
+    for (int i = 0; i < registeredStudents.size(); i++) {
+        double total = 0;
+
+        for (Assignment a : assignments) {
+            Integer score = a.getScores().get(i);
+
+            if (score != null) {
+                total += score * (a.getWeight() / 100);
+            }
         }
+
+        finalScores.add((int) Math.round(total));
     }
 
     /**
