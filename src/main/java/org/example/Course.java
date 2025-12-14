@@ -20,6 +20,10 @@ public class Course {
 
     private static int nextId = 1;
 
+    /**
+     * Checks if the sum of weights of all assignments of that course equals to 100%.
+     * @return True or False as the validity of the assignment weight
+     */
     public boolean isAssignmentWeightValid() {
         double sum = 0;
 
@@ -30,6 +34,12 @@ public class Course {
         return sum == 100;
     }
 
+    /**
+     * adds a student to the student list of the course, also add a new null element to each
+     * assignment of this course, and add a new null element for the finalScores.
+     * @param student the given student to be added to the list
+     * @return True or False to whether the student was registered or not
+     */
     public boolean registerStudent(Student student) {
         if (student == null || registeredStudents.contains(student)) {
             return false;
