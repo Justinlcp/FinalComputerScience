@@ -167,10 +167,10 @@ public class UnitTest {
     }
 
     @Test
-    @DisplayName("JAVA → Java")
+    @DisplayName("JAVA JavA → Java Java")
     void testToTitleCase2() {
-        String text = "JAVA";
-        String expected = "Java";
+        String text = "JAVA JavA";
+        String expected = "Java Java";
         String actual = Util.toTitleCase(text);
         Assertions.assertEquals(expected, actual);
     }
