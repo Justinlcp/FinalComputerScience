@@ -3,7 +3,6 @@ package org.example;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import util.Util;
 
 import java.util.ArrayList;
 
@@ -77,10 +76,10 @@ public class Course {
         for (int i = 0; i < registeredStudents.size(); i++) {
             double total = 0;
 
-            for (Assignment a : assignments) {
-                Integer score = a.getScores().get(i);
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
                 if (score != null) {
-                    total += score * (a.getWeight() / 100);
+                    total += score * (assignment.getWeight() / 100);
                 }
             }
             averages[i] = (int) Math.round(total);
