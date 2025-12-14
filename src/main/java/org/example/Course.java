@@ -55,6 +55,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * calculates the weighted average score of a student.
+     * @return the average of the student
+     */
     public int[] calcStudentsAverage() {
         int[] averages = new int[registeredStudents.size()];
 
@@ -72,8 +76,15 @@ public class Course {
         return averages;
     }
 
+    /**
+     * Adds a new assignment to the course.
+     * @param assignmentName the given assignment name
+     * @param weight the weight of the assignment
+     * @param maxScore the maximum score reachable
+     * @return True or False to whether the new assignment can be added to the course
+     */
     public boolean addAssignment(String assignmentName, double weight, int maxScore) {
-        Assignment newAssignment = new Assignment(assignmentName, weight);
+        Assignment newAssignment = new Assignment(assignmentName, weight, maxScore);
 
         for (int i = 0; i < registeredStudents.size(); i++) {
             newAssignment.getScores().add(null);
@@ -83,12 +94,20 @@ public class Course {
         return true;
     }
 
+    /**
+     * Generates random scores for each assignment and student, and calculates the final
+     * score for each student.
+     */
     public void generateScores() {
         for (Assignment a : assignments) {
             a.generateRandomScore();
         }
     }
 
+    /**
+     *  Displays the scores of a course in a table, with the assignment averages and student
+     *  weighted average.
+     */
     public void displayScores() {
         System.out.printf("Course: %s (%s)\n", courseName, courseId);
 
