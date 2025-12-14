@@ -1,8 +1,9 @@
-import org.example.Address;
-import org.example.Department;
+import org.example.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Assertions;
+
+import java.util.ArrayList;
 
 public class UnitTest {
 
@@ -57,6 +58,71 @@ public class UnitTest {
         String dept = "Science!";
         boolean expected = false;
         boolean actual = Department.isDepartmentNameValid(dept);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Scores 60 and 80 --> average = 70")
+    void testAssignmentAverage1() {
+        Assignment task = new Assignment("Exam", 50, 100);
+
+        ArrayList<Integer> score = new ArrayList<>();
+        score.add(60);
+        score.add(80);
+        task.setScores(score);
+
+        double expected = 70.0;
+        double actual = task.calcAssignmentAvg();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("No scores --> 0")
+    void testAssignmentAverage2() {
+        Assignment task = new Assignment("Exam", 10, 100);
+
+        double expected = 0.0;
+        double actual = task.calcAssignmentAvg();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Student add to course --> successful")
+    void testRegisterStudent1() {
+        Department dept = new Department("French");
+        Course classCourse = new Course("Grammar", 5.9, dept);
+
+        Address location = new Address(
+                13, "Dog", "Quebec", Address.Province.QC, "A1B2C3"
+        );
+
+        Student learner = new Student(
+                "Greg", Student.Gender.MALE, location, dept
+        );
+
+        boolean expected = true;
+        boolean actual = classCourse.registerStudent(learner);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Registering same student twice --> False")
+    void testRegisterStudent2() {
+        Department dept = new Department("Math");
+        Course classCourse = new Course("Geometry", 3.0, dept);
+
+        Address location = new Address(
+                20, "King", "Toronto", Address.Province.ON, "A1B2C3"
+        );
+
+        Student learner = new Student(
+                "Bob", Student.Gender.MALE, location, dept
+        );
+
+        classCourse.registerStudent(learner);
+
+        boolean expected = false;
+        boolean actual = classCourse.registerStudent(learner);
         Assertions.assertEquals(expected, actual);
     }
 }
