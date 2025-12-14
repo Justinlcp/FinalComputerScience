@@ -19,3 +19,11 @@ public class Course {
     private ArrayList<Student> registeredStudents;
 
     private static int nextId = 1;
+
+    public boolean isAssignmentWeightValid() {
+        double sum = 0;
+        for (Assignment a : assignments) {
+            sum += a.getWeight();
+        }
+        return sum == 100;
+    }
