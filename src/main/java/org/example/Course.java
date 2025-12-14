@@ -22,8 +22,25 @@ public class Course {
 
     public boolean isAssignmentWeightValid() {
         double sum = 0;
+
         for (Assignment a : assignments) {
             sum += a.getWeight();
         }
+
         return sum == 100;
+    }
+
+    public boolean registerStudent(Student student) {
+        if (student == null || registeredStudents.contains(student)) {
+            return false;
+        }
+
+        registeredStudents.add(student);
+
+        for (Assignment a : assignments) {
+            while (a.getScores().size() < registeredStudents.size()) {
+                a.getScores().add(null);
+            }
+        }
+        return true;
     }
