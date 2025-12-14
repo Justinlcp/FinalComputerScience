@@ -79,4 +79,28 @@ public class Student {
     public String toSimplifiedString() {
         return studentId + " - " + studentName + " - " + department.getDepartmentName();
     }
+
+    @Override
+    public String toString() {
+        String result = "Student ID: " + studentId
+                + ", Name: " + studentName
+                + ", Gender: " + gender
+                + ", Address: " + address
+                + ", Department: " + department.getDepartmentName()
+                + ", Registered Courses: ";
+
+        if (registeredCourses.isEmpty()) {
+            result += "None";
+        } else {
+            for (Course c : registeredCourses) {
+                result += "["
+                        + c.getCourseId() + " - "
+                        + c.getCourseName() + " - "
+                        + c.getDepartment().getDepartmentName()
+                        + "] ";
+            }
+        }
+
+        return result;
+    }
 }
