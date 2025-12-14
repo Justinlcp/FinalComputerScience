@@ -22,6 +22,19 @@ public class Course {
 
     private static int nextId = 1;
 
+    public Course(String courseName, double credits, Department department) {
+
+        this.courseName = Util.toTitleCase(courseName);
+        this.credits = credits;
+        this.department = department;
+
+        courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
+
+        assignments = new ArrayList<>();
+        registeredStudents = new ArrayList<>();
+        finalScores = new ArrayList<>();
+    }
+
     /**
      * Checks if the sum of weights of all assignments of that course equals to 100%.
      * @return True or False as the validity of the assignment weight
