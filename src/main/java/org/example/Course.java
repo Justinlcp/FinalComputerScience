@@ -119,25 +119,25 @@ public class Course {
      *  weighted average.
      */
     public void displayScores() {
-
         System.out.printf("Course: %s (%s)\n", courseName, courseId);
 
         System.out.printf("%-20s", "Student");
         for (Assignment a : assignments) {
             System.out.printf("%-15s", a.getAssignmentName());
         }
-        System.out.printf("%-10s\n", "Final Score");
+        System.out.printf("%-10s\n", "Final");
+
+        int[] finalScores = calcStudentsAverage();
 
         for (int i = 0; i < registeredStudents.size(); i++) {
-            Student student = registeredStudents.get(i);
-            System.out.printf("%-20s", student.getStudentName());
+            System.out.printf("%-20s", registeredStudents.get(i).getStudentName());
 
             for (Assignment a : assignments) {
                 Integer score = a.getScores().get(i);
                 System.out.printf("%-15s", score == null ? "-" : score);
             }
 
-            System.out.printf("%-10d\n", finalScores.get(i));
+            System.out.printf("%-10d\n", finalScores[i]);
         }
 
         System.out.printf("%-20s", "Average");
