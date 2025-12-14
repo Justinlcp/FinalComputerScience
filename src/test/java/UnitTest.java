@@ -2,6 +2,7 @@ import org.example.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Assertions;
+import util.Util;
 
 import java.util.ArrayList;
 
@@ -153,6 +154,24 @@ public class UnitTest {
 
         boolean expected = false;
         boolean actual = classCourse.isAssignmentWeightValid();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName(" Computer SCIENCE AND math → Computer Science And Math")
+    void testToTitleCase1() {
+        String text = "computer SCIENCE AND math";
+        String expected = "Computer Science And Math";
+        String actual = Util.toTitleCase(text);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("JAVA → Java")
+    void testToTitleCase2() {
+        String text = "JAVA";
+        String expected = "Java";
+        String actual = Util.toTitleCase(text);
         Assertions.assertEquals(expected, actual);
     }
 }
