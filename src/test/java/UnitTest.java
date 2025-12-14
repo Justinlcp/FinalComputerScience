@@ -65,7 +65,7 @@ public class UnitTest {
     @Test
     @DisplayName("Scores 60 and 80 --> average = 70")
     void testAssignmentAverage1() {
-        Assignment task = new Assignment("Exam", 50, 100);
+        Assignment task = new Assignment("Exam", 50);
 
         ArrayList<Integer> score = new ArrayList<>();
         score.add(60);
@@ -80,7 +80,7 @@ public class UnitTest {
     @Test
     @DisplayName("No scores --> 0")
     void testAssignmentAverage2() {
-        Assignment task = new Assignment("Exam", 10, 100);
+        Assignment task = new Assignment("Exam", 10);
 
         double expected = 0.0;
         double actual = task.calcAssignmentAvg();
@@ -134,9 +134,9 @@ public class UnitTest {
         Department dept = new Department("Computer Science");
         Course classCourse = new Course("Programming", 5.9, dept);
 
-        classCourse.addAssignment("Exam1", 10, 100);
-        classCourse.addAssignment("Exam2", 30, 100);
-        classCourse.addAssignment("Final", 60, 100);
+        classCourse.addAssignment("Exam1", 10);
+        classCourse.addAssignment("Exam2", 30);
+        classCourse.addAssignment("Final", 60);
 
         boolean expected = true;
         boolean actual = classCourse.isAssignmentWeightValid();
@@ -149,8 +149,8 @@ public class UnitTest {
         Department dept = new Department("Computer Science");
         Course classCourse = new Course("Programming", 5.9, dept);
 
-        classCourse.addAssignment("Exam1", 10, 100);
-        classCourse.addAssignment("Final", 50, 100);
+        classCourse.addAssignment("Exam1", 10);
+        classCourse.addAssignment("Final", 50);
 
         boolean expected = false;
         boolean actual = classCourse.isAssignmentWeightValid();

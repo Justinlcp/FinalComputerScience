@@ -92,11 +92,10 @@ public class Course {
      * Adds a new assignment to the course.
      * @param assignmentName the given assignment name
      * @param weight the weight of the assignment
-     * @param maxScore the maximum score reachable
      * @return True or False to whether the new assignment can be added to the course
      */
-    public boolean addAssignment(String assignmentName, double weight, int maxScore) {
-        Assignment newAssignment = new Assignment(assignmentName, weight, maxScore);
+    public boolean addAssignment(String assignmentName, double weight) {
+        Assignment newAssignment = new Assignment(assignmentName, weight);
 
         for (int i = 0; i < registeredStudents.size(); i++) {
             newAssignment.getScores().add(null);
@@ -113,22 +112,6 @@ public class Course {
     public void generateScores() {
         for (Assignment a : assignments) {
             a.generateRandomScore();
-        }
-
-        finalScores.clear();
-
-        for (int i = 0; i < registeredStudents.size(); i++) {
-            double total = 0;
-
-            for (Assignment a : assignments) {
-                Integer score = a.getScores().get(i);
-
-                if (score != null) {
-                    total += score * (a.getWeight() / 100);
-                }
-            }
-
-            finalScores.add((int) Math.round(total));
         }
     }
 
