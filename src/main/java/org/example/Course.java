@@ -19,11 +19,3 @@ public class Course {
     private ArrayList<Student> registeredStudents;
 
     private static int nextId = 1;
-
-    public boolean isAssignmentWeightValid() {
-        double total = 0;
-        for (Assignment a : assignments) {
-            total += a.getWeight();
-        }
-        return Math.abs(total - 100) < 0.0001; // allow small floating point error
-    }
