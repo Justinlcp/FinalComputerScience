@@ -112,4 +112,15 @@ public class Course {
         return courseId + ", " + courseName + ", " + credits + ", " + department.getDepartmentName();
     }
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId=" + courseId +
+                ", courseName=" + courseName +
+                ", credits=" + credits +
+                ", department=" + department.getDepartmentName() +
+                ", registeredStudents=" + registeredStudents.size() +
+                ", weightValid=" + isAssignmentWeightValid() +
+                '}';
+    }
 }
