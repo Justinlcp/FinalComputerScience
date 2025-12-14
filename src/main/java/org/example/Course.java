@@ -23,16 +23,24 @@ public class Course {
     private static int nextId = 1;
 
     public Course(String courseName, double credits, Department department) {
+        if (courseName == null || department == null) {
+            this.courseId = null;
+            this.courseName = null;
+            this.credits = 0;
+            this.department = null;
+            this.assignments = null;
+            this.registeredStudents = null;
+            return;
+        }
 
-        this.courseName = Util.toTitleCase(courseName);
+        this.courseName = util.Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
 
-        courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
+        this.courseId = String.format("C-%s-%02d", department.getDepartmentId(), nextId++);
 
-        assignments = new ArrayList<>();
-        registeredStudents = new ArrayList<>();
-        finalScores = new ArrayList<>();
+        this.assignments = new ArrayList<>();
+        this.registeredStudents = new ArrayList<>();
     }
 
     /**
