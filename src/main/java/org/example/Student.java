@@ -24,6 +24,16 @@ public class Student {
     MALE, FEMALE
     }
 
+
+    public Student(String studentName, Gender gender, Address address, Department department) {
+        this.studentName = studentName;
+        this.gender = gender;
+        this.address = address;
+        this.department = department;
+        this.registeredCourses = new ArrayList<>();
+        this.studentId = String.format("S%06d", nextId++);
+    }
+
     /**
      * Registers a course, this method (1) adds the course to the student's registeredCourses list,
      * (2) adds the student to the course's registeredStudents list,
