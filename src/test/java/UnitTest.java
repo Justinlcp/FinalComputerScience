@@ -125,4 +125,34 @@ public class UnitTest {
         boolean actual = classCourse.registerStudent(learner);
         Assertions.assertEquals(expected, actual);
     }
+
+
+    @Test
+    @DisplayName("10 + 30 + 60 = 100 --> True")
+    void testAssignmentWeight1() {
+        Department dept = new Department("Computer Science");
+        Course classCourse = new Course("Programming", 5.9, dept);
+
+        classCourse.addAssignment("Exam1", 10, 100);
+        classCourse.addAssignment("Exam2", 30, 100);
+        classCourse.addAssignment("Final", 60, 100);
+
+        boolean expected = true;
+        boolean actual = classCourse.isAssignmentWeightValid();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("20 + 60 is not 100 --> False")
+    void testAssignmentWeight2() {
+        Department dept = new Department("Computer Science");
+        Course classCourse = new Course("Programming", 5.9, dept);
+
+        classCourse.addAssignment("Exam1", 10, 100);
+        classCourse.addAssignment("Final", 50, 100);
+
+        boolean expected = false;
+        boolean actual = classCourse.isAssignmentWeightValid();
+        Assertions.assertEquals(expected, actual);
+    }
 }
