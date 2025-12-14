@@ -61,4 +61,9 @@ public class Assignment {
         }
         return amountOfGrades == 0 ? 0 : (double) sum / amountOfGrades;
     }
+
+    @Override
+    public String toString() {
+        return assignmentId + " - " + assignmentName + " - " + weight;
+    }
 }
