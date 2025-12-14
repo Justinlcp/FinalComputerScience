@@ -24,7 +24,7 @@ public class UnitTest {
     }
 
     @Test
-    @DisplayName("ABCDEF -- False")
+    @DisplayName("ABCDEF --> False")
     void testPostalCode3() {
         String code = "ABCDEF";
         boolean result = false;
