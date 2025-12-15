@@ -23,7 +23,8 @@ System Capabilities
 
 Class Overview and Responsibilities
 
-Department:
+Department
+
 Represents an academic department in the school
 
 Responsibilities:
@@ -43,6 +44,21 @@ Responsibilities:
 - Registers for/drops courses
 - Maintains a list of registered courses 
 - Provides simplified/detailed string representations of student data
+
+
+Course
+
+Represents a course offered by a department
+
+Responsibilities:
+
+- Stores course ID/course name/credit value/department
+- Automatically generates course IDs
+- Manages registered students
+- Stores assignments (weights too)
+- Validates that total assignment weights equal 100%
+- Calculates weighted averages for students
+- Displays course score tables including assignment averages/final scores
 
 Assignment
 
