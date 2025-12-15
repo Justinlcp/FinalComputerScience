@@ -9,6 +9,7 @@ This project is an academic management system developed entirely as the final pr
 The project focuses on applying many things we learned this semester such asclass design, data validation, method creating and unit testing. 
 It is built using Java code, Maven, lombok and JUnit 5.
 
+
 System Capabilities
 
 - Creating academic departments (automatic Id generation)
@@ -18,3 +19,15 @@ System Capabilities
 - Adding assignments (Weighted grading schemes)
 - Generating/Calculating student scores
 - Displaying scores (Assignment averages/Final score for all students)
+
+
+Class Overview and Responsibilities
+
+Department:
+Represents an academic department in the school
+
+Responsibilities:
+
+- Stores the department (Name/Department ID)
+- Automatically generates the ID
+- Validates department names (Letters/Spaces only)
