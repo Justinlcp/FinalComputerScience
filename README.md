@@ -108,3 +108,6 @@ JUnit 5 tests methods included in my different classes including:
 - Registration/caluclation logic
 
   
+Conclusion
+
+This project demonstrats practical uses of many concepts saw during the class Introduction to Programming. It emphasizes clean presentation (class design), good data validation, object relationships and JUnit testing.
