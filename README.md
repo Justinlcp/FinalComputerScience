@@ -31,3 +31,15 @@ Responsibilities:
 - Stores the department (Name/Department ID)
 - Automatically generates the ID
 - Validates department names (Letters/Spaces only)
+
+Student
+
+Represents a student enrolled in the school.
+
+Responsibilities:
+
+- Stores student ID/name/gender/address/department
+- Automatically generates student IDs
+- Registers for/drops courses
+- Maintains a list of registered courses 
+- Provides simplified/detailed string representations of student data
