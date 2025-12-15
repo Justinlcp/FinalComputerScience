@@ -98,3 +98,13 @@ Restricts gender to the constants MALE and FEMALE
 
 Province:
 Restricts province values to strictly Canadian provinces/territory (abbreviations)
+
+
+Unit Testing
+
+JUnit 5 tests methods included in my different classes including:
+- Validation methods
+- Utility methods
+- Registration/caluclation logic
+
+  
