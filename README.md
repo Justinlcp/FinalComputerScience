@@ -43,3 +43,14 @@ Responsibilities:
 - Registers for/drops courses
 - Maintains a list of registered courses 
 - Provides simplified/detailed string representations of student data
+
+Assignment
+
+Represents an assignment within a course
+
+Responsibilities:
+
+- Stores assignment ID/name/weight
+- Stores student scores
+- Generates random scores(Many rules)
+- Calculates assignment averages
