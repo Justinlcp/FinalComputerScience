@@ -81,3 +81,20 @@ Responsibilities:
 - Validates Canadian postal codes (specific format)
 - Ensures postal codes are stored in uppercase
 
+Util
+
+Utility class used to support consistent formatting accross the entire system
+
+Responsibilities: 
+- Converts string to title case
+- Ensures consistet formating (Student names/department names/course names
+
+
+Enumerations
+
+Gender:
+
+Restricts gender to the constants MALE and FEMALE
+
+Province:
+Restricts province values to strictly Canadian provinces/territory (abbreviations)
