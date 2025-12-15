@@ -15,4 +15,6 @@ System Capabilities
 - Creating students (Personal/Academic information)
 - Registering/Droping students from courses
 - Creating courses (Under specific departments)
-- 
+- Adding assignments (Weighted grading schemes)
+- Generating/Calculating student scores
+- Displaying scores (Assignment averages/Final score for all students)
