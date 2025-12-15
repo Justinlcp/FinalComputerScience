@@ -46,7 +46,7 @@ Responsibilities:
 
 Assignment
 
-Represents an assignment within a course
+Represents an assignment within a course.
 
 Responsibilities:
 
@@ -54,3 +54,14 @@ Responsibilities:
 - Stores student scores
 - Generates random scores(Many rules)
 - Calculates assignment averages
+
+Address
+
+Represents a student's address.
+
+Responsibilities:
+
+- Stores street number/Street name/city/province/postal code
+- Validates Canadian postal codes (specific format)
+- Ensures postal codes are stored in uppercase
+
