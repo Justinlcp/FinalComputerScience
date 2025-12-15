@@ -1,4 +1,4 @@
-FinalCSProject – Academic Management System
+FinalCSProject – Academic Management System\n
 Justin Lachapelle
 Id: 2583626
 
